@@ -41,9 +41,9 @@ const Header = () => {
         <div className="nav-item">GALLERY</div>
         <div className="nav-item">ARCADE</div>
         <div className="nav-item">CALENDAR</div>
-        <div className="nav-item">TWITTER</div>
-        <div className="nav-item">DISCORD</div>
-        <div className="nav-item">OM</div>
+        <div className="nav-item" onClick={handleTwitterClick}>TWITTER</div>
+        <div className="nav-item" onClick={handleDiscordClick}>DISCORD</div>
+        <div className="nav-item" onClick={handleOMClick}>OM</div>
       </nav>
     </header>
   );
