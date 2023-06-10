@@ -1,0 +1,123 @@
+@font-face {
+    font-family: "8 Bit Wonder";
+    src: url("./assets/8-BIT-WONDER.TTF");
+}  
+
+@font-face {
+  font-family: "dogica";
+  src: url("./assets//dogica.ttf");
+}  
+
+@font-face {
+  font-family: "dogicabold";
+  src: url("./assets//dogicabold.ttf");
+}  
+
+.gallery-container {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 60px);
+    overflow-y: hidden;
+}
+  
+.sorting-section {
+    width: 25%;
+    margin-left: 6rem;
+}
+  
+.grid-section {
+    width: 75%;
+    margin-right: 7rem;
+    margin-left: 1rem;
+}
+  
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+    justify-content: start;
+    align-items: start;
+    scrollbar-width: none;
+}
+
+.gallery-grid::-webkit-scrollbar {
+    display: none;
+}
+  
+.gallery-item {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 350px; /* Adjust this according to your needs */
+}
+  
+.gallery-item img {
+    border-radius: 0.75rem;
+    width: 230px;
+    height: 230px;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: pixelated;
+    object-fit: cover;
+    margin-bottom: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.punk-number {
+    color: black;
+    font-family: dogicabold;
+    font-size: .65rem;
+    letter-spacing: .1em;
+    margin-top: 0.75rem;
+    padding-bottom: 0.25rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.inscription-number, .punk-rarity {
+    color: black;
+    font-family: dogica;
+    font-size: .65rem;
+    letter-spacing: .1em;
+    margin-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.filter-label {
+    font-family: "8 Bit Wonder";
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 3rem;
+    cursor: pointer;
+}
+
+.filter-label label {
+    cursor: pointer;
+}
+
+.filter-option {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: .75rem;
+    font-family: "dogica";
+    cursor: pointer;
+    color: black;
+}
+
+.filter-label-div {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.all-options.expanded {
+    margin-bottom: 1rem;
+}
+  
