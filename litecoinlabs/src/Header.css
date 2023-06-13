@@ -23,8 +23,9 @@
   }
   
 .logo-button {
+  position: relative;
     font-family: "8 Bit Wonder";
-    font-size: 20px;
+    font-size: 18px;
     background-color: #3574c1;
     border: transparent;
     padding: 6px;
@@ -32,8 +33,9 @@
     cursor: pointer;
     border-radius: 4px;
     color: #ffffff;
-    margin-left: 30px;
+    margin-left: 50px;
     z-index: 1000;
+    border-bottom: 1px solid rgba(0,0,0,.1);
   }
 
   .logo-button:hover {
@@ -51,6 +53,7 @@
     margin-left: 10px;
     padding: 6px 6px 8px;
     transition: background-color 0.2s ease-in-out;
+    border-bottom: 1px solid rgba(0,0,0,.1);
   }
 
   .nav-button:hover, .icon-button:hover, .om-button:hover {
@@ -58,7 +61,7 @@
 }
 
 .navigation-desktop {
-    margin-right: 30px;
+    margin-right: 60px;
     display: flex;
     align-items: center;
   }
@@ -73,6 +76,7 @@
     margin-left: 10px;
     padding: 3px 15px;
     transition: background-color 0.2s ease-in-out;
+    border-bottom: 1px solid rgba(0,0,0,.1);
   }
   
 .twitter, .discord {
@@ -90,6 +94,7 @@
     margin-left: 10px;
     padding: 5px 18px;
     transition: background-color 0.2s ease-in-out;
+    border-bottom: 1px solid rgba(0,0,0,.1);
   }
 
 .om-button img {
@@ -121,7 +126,7 @@
     margin-top: 30rem;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 200%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -130,6 +135,7 @@
     padding-right: 30px;
     color: black;
     backdrop-filter: blur(10px);
+    z-index: 101;
   }
   
   .nav-item {
@@ -141,6 +147,8 @@
     font-family: "8 Bit Wonder";
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     width: 100%;
+    text-decoration: none;
+    color: black;
   }
   
   @media (max-width: 1025px) {
