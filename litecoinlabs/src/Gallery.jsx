@@ -56,7 +56,7 @@ function Gallery() {
     // If it's the second dataset and there are no filters, limit the data points
     if (!isDataSetOne) {
       const hasAnyFilter = Object.values(filters).some(filterValues => filterValues.length > 0);
-      setSliceEnd(!hasAnyFilter ? 2500 : data.length);
+      setSliceEnd(!hasAnyFilter ? 1000 : data.length);
     }
   }, [isDataSetOne]);
 
