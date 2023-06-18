@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'; // import Link
 import './Header.css'; 
 
@@ -27,6 +27,17 @@ const handleMarketClick = () => {
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    // Clean-up function
+    return () => { document.body.style.overflow = 'unset'; }
+  }, [isOpen]); // Only re-run the effect if isOpen changes
 
   const closeMenu = () => {
     setIsOpen(false);

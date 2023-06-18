@@ -119,6 +119,8 @@
 
   .navigation-mobile {
     display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease; /* adjust time as needed */
   }
   
   .navigation-mobile.open {
@@ -134,9 +136,12 @@
     padding-left: 30px;
     padding-right: 30px;
     color: black;
-    backdrop-filter: blur(10px) brightness(0.8);
+    background: rgba(255, 255, 255, 0.6); /* Adjust the color and opacity as needed */
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
     z-index: 101;
-    background: rgba(255, 255, 255, 0.8);
+    opacity: 1;
+    transition: opacity 0.3s ease;
   }
   
   .nav-item {
