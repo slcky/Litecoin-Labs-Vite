@@ -21,17 +21,46 @@ const handleOMClick = () => {
     window.open("https://ordinals.market/collection/ordinals/litecoin-punks", "_blank");
 };
 
+const handleMarketClick = () => {
+  window.open("https://ordinalslite.market/", "_blank");
+};
+
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const closeMenu = () => {
+    setIsOpen(false);
+  }
+
+  const handleTwitterClickAndCloseMenu = () => {
+    handleTwitterClick();
+    closeMenu();
+  }
+
+  const handleDiscordClickAndCloseMenu = () => {
+    handleDiscordClick();
+    closeMenu();
+  }
+
+  const handleOMClickAndCloseMenu = () => {
+    handleOMClick();
+    closeMenu();
+  }
+
+  const handleMarketClickAndCloseMenu = () => {
+    handleMarketClick();
+    closeMenu();
+  }
+
   return (
     <header className="header">
-      <Link to="/"><button className="logo-button">LLABS</button></Link>
+      <Link to="/"><button className="logo-button" onClick={closeMenu}>LLABS</button></Link>
       <button className="menu-button" onClick={() => setIsOpen(!isOpen)}>
         <img src={MenuSVG} alt="Menu"/>
       </button>
       <nav className="navigation-desktop">
         <Link to="/gallery"><button className="nav-button">GALLERY</button></Link>
+        <button className="nav-button" onClick={handleMarketClick}>MARKET</button>
         {/*<Link to="/calendar"><button className="nav-button">CALENDAR</button></Link>*/}
         {/*<button className="nav-button">ARCADE</button>*/}
         <button className="icon-button" onClick={handleTwitterClick}><img className="twitter" src={TwitterSVG} alt="Twitter" /></button>
@@ -39,12 +68,13 @@ const Header = () => {
         <button className="om-button" onClick={handleOMClick}><img src={OMLogoSVG} alt="OMLogo" /></button>
       </nav>
       <nav className={`navigation-mobile ${isOpen ? 'open' : ''}`}>
-        <Link to="/gallery" className="nav-item">GALLERY</Link>
-        {/*<Link to="/calendar" className="nav-item">CALENDAR</Link>*/}
-        {/*<div className="nav-item">ARCADE</div>*/}
-        <div className="nav-item" onClick={handleTwitterClick}>TWITTER</div>
-        <div className="nav-item" onClick={handleDiscordClick}>DISCORD</div>
-        <div className="nav-item" onClick={handleOMClick}>OM</div>
+        <Link to="/gallery" className="nav-item" onClick={closeMenu}>GALLERY</Link>
+        <div className="nav-item" onClick={handleMarketClickAndCloseMenu}>MARKET</div>
+        {/*<Link to="/calendar" className="nav-item" onClick={closeMenu}>CALENDAR</Link>*/}
+        {/*<div className="nav-item" onClick={closeMenu}>ARCADE</div>*/}
+        <div className="nav-item" onClick={handleTwitterClickAndCloseMenu}>TWITTER</div>
+        <div className="nav-item" onClick={handleDiscordClickAndCloseMenu}>DISCORD</div>
+        <div className="nav-item" onClick={handleOMClickAndCloseMenu}>OM</div>
       </nav>
     </header>
   );

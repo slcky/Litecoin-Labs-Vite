@@ -134,8 +134,9 @@
     padding-left: 30px;
     padding-right: 30px;
     color: black;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px) brightness(0.8);
     z-index: 101;
+    background: rgba(255, 255, 255, 0.8);
   }
   
   .nav-item {
