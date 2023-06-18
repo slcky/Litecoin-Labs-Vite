@@ -14,7 +14,7 @@ const handleTwitterClick = () => {
 };
 
 const handleDiscordClick = () => {
-    window.open("https://discord.gg/litecoinlabs", "_blank");
+    window.open("https://discord.gg/hpgZUZGkNt", "_blank");
 };
 
 const handleOMClick = () => {
@@ -32,16 +32,16 @@ const Header = () => {
       </button>
       <nav className="navigation-desktop">
         <Link to="/gallery"><button className="nav-button">GALLERY</button></Link>
-        <button className="nav-button">ARCADE</button>
-        <button className="nav-button">CALENDAR</button>
+        {/*<Link to="/calendar"><button className="nav-button">CALENDAR</button></Link>*/}
+        {/*<button className="nav-button">ARCADE</button>*/}
         <button className="icon-button" onClick={handleTwitterClick}><img className="twitter" src={TwitterSVG} alt="Twitter" /></button>
         <button className="icon-button" onClick={handleDiscordClick}><img className="discord" src={DiscordSVG} alt="Discord" /></button>
         <button className="om-button" onClick={handleOMClick}><img src={OMLogoSVG} alt="OMLogo" /></button>
       </nav>
       <nav className={`navigation-mobile ${isOpen ? 'open' : ''}`}>
         <Link to="/gallery" className="nav-item">GALLERY</Link>
-        <div className="nav-item">ARCADE</div>
-        <div className="nav-item">CALENDAR</div>
+        {/*<Link to="/calendar" className="nav-item">CALENDAR</Link>*/}
+        {/*<div className="nav-item">ARCADE</div>*/}
         <div className="nav-item" onClick={handleTwitterClick}>TWITTER</div>
         <div className="nav-item" onClick={handleDiscordClick}>DISCORD</div>
         <div className="nav-item" onClick={handleOMClick}>OM</div>
