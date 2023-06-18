@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom'; // Changed to HashRouter
 import './App.css';
 import Header from './Header';
 import Gallery from './Gallery'; // import the Gallery component
