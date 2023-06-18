@@ -16,7 +16,7 @@ function App() {
           <Route path="/calendar" element={<Calendar />} /> {/* Add this line */}
           <Route path="/" element={
             <div className="center-screen">
-              <img className="logo" src="src/assets/litecoinlabs.png" alt="Litecoin Labs" />
+              <img className="logo" src="litecoinlabs.png" alt="Litecoin Labs" />
             </div>
           } />
         </Routes>
