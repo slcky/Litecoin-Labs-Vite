@@ -2,6 +2,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import Papa from 'papaparse';
 import './Gallery.css';
+import close from './assets/close.svg';
+import filter from './assets/filter.svg';
 
 const filterColumnsData1 = ["Background", "Body", "Eyes", "Eyewear", "Headwear", "Mouth", "Outerwear"];
 const filterColumnsData2 = ["Background", "Body", "Eyes", "Hats",	"Beak",	"Outerwear", "Feathers", "Glasses"];
@@ -261,7 +263,7 @@ function Gallery() {
       <div className="sorting-header">
         <h2 className="filter-text">Filter</h2>
         <div className="close-button-div">
-          <img className="close-btn" src="src\assets\close.svg" alt="Close button"></img>
+          <img className="close-btn" src={close} alt="Close button"></img>
         </div>
       </div>
         <div className="rarity-mode-switch">
@@ -329,7 +331,7 @@ function Gallery() {
           </div>
           <div className="filter-button-div">
             <button className="filter-button" onClick={toggleSortingSection}>
-              <img src="src\assets\filter.svg" alt="filter" />
+              <img src={filter} alt="filter" />
             </button>
           </div>
         </div>
