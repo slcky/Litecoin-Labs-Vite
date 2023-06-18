@@ -1,73 +1,42 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from 'react';
-import './Calendar.css'; 
+import Papa from 'papaparse';
+import './Calendar.css';
 
 function Calendar() {
-    const [date, setDate] = useState(new Date());
+  const [events, setEvents] = useState([]);
 
-    const daysInMonth = (date) => {
-        return 32 - new Date(date.getFullYear(), date.getMonth(), 32).getDate();
-    };
+  useEffect(() => {
+    Papa.parse('https://docs.google.com/spreadsheets/d/e/2PACX-1vR2ZxrRd2m4StGsM9UNvhPSfz8NknnzoOHfOlFEU8BsZHhZiZtvLR9dkvn6U5MhMd2Fg8K6-_-sRRqu/pub?gid=0&single=true&output=csv', {
+      download: true,
+      header: true,
+      complete: function(results) {
+        const sortedEvents = results.data.sort((a, b) => new Date(a.Date) - new Date(b.Date));
+        setEvents(sortedEvents);
+      },
+      error: function(err) {
+        console.error('Error reading CSV file:', err);
+      }
+    });
+  }, []);
 
-    const firstDayOfMonth = (date) => {
-        return new Date(date.getFullYear(), date.getMonth(), 1).getDay();
-    };
-
-    const getMonthName = (date) => {
-        return date.toLocaleString('default', { month: 'long' });
-    };
-
-    const generateCalendar = (date) => {
-        const days = daysInMonth(date);
-        const prevMonthDays = daysInMonth(new Date(date.getFullYear(), date.getMonth()-1));
-        const month = getMonthName(date);
-        const firstDay = firstDayOfMonth(date);
-
-        let calendar = [];
-        for (let i = 0; i < firstDay; i++) {
-            calendar.unshift({day: prevMonthDays-i, inMonth: false});
-        }
-        for (let i = 1; i <= days; i++) {
-            calendar.push({day: i, inMonth: true});
-        }
-
-        // Fill the remaining days with the start days of the next month
-        let nextMonthDay = 1;
-        while (calendar.length < 42) {
-            calendar.push({day: nextMonthDay++, inMonth: false});
-        }
-
-        return { month, year: date.getFullYear(), days: calendar };
-    };
-
-    const [calendar, setCalendar] = useState(generateCalendar(date));
-
-    useEffect(() => {
-        setCalendar(generateCalendar(date));
-    }, [date]);
-
-    const nextMonth = () => {
-        setDate(new Date(date.setMonth(date.getMonth() + 1)));
-    };
-
-    const prevMonth = () => {
-        setDate(new Date(date.setMonth(date.getMonth() - 1)));
-    };
-
-    return (
-        <div className="calendar-container">
-            <div className="calendar-grid">
-                {calendar.days.map((day, index) => (
-                    <div key={index} className={`calendar-day ${day.inMonth ? 'in-month' : ''}`}>{day.day}</div>
-                ))}
-            </div>
-            <div className="calendar-footer">
-                <button onClick={prevMonth}>&lt;</button>
-                <span>{calendar.month} {calendar.year}</span>
-                <button onClick={nextMonth}>&gt;</button>
-            </div>
+  return (
+    <div className="calendar-container">
+      {events.map((event, index) => (
+        <div key={index} className="event">
+          <img src={event.Image} alt={event.Name} />
+          <div>
+            <h2>{event.Name}</h2>
+            <h3>Release date: {event.Date}</h3>
+            <p>{event.Description}</p>
+            <a href={event.Website}>Website</a>
+            <a href={event.Twitter}>Twitter</a>
+            <a href={event.Discord}>Discord</a>
+          </div>
         </div>
-    );
+      ))}
+    </div>
+  );
 }
 
 export default Calendar;
