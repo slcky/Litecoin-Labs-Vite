@@ -59,6 +59,7 @@ src: url("./assets//dogicabold.ttf");
   text-align: left;
   font-family: "dogicabold";
   color: black;
+  margin-top: 1rem;
 }
 
 .event p {
@@ -107,4 +108,33 @@ src: url("./assets//dogicabold.ttf");
   background-color: #3574c1 !important;
   color: white !important;
   border-bottom: 1px solid rgba(0,0,0,.1) !important;
+}
+
+@media (max-width: 1025px) {
+  .event {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .event img {
+    min-width: 250px;
+    max-width: 300px;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .event h2,
+  .event h3,
+  .event p {
+    font-size: 75%;
+  }
+
+  .event button {
+    font-size: 90%;
+    padding: 6.75px 13.5px; /* 90% of the original padding */
+  }
+
+  .buttons {
+    text-align: center;
+  }
 }
