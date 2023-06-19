@@ -22,7 +22,7 @@ const handleOMClick = () => {
 };
 
 const handleMarketClick = () => {
-  window.open("https://ordinalslite.market/", "_blank");
+  window.open("https://beta.ordinalslite.market/", "_blank");
 };
 
 const Header = () => {
