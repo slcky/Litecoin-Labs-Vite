@@ -86,7 +86,7 @@ src: url("./assets//dogicabold.ttf");
   text-align: left;
 }
 
-.featured-header, .upcoming-header, .released-header {
+.featured-header, .upcoming-header, .released-header, .minting-header {
   font-family: "8 Bit Wonder";
   color: black;
   align-items: left;
@@ -100,5 +100,11 @@ src: url("./assets//dogicabold.ttf");
   z-index: 100;
   margin-bottom: 1rem;
   width: 100%;
-  margin-top: 1rem;
+  padding-top: 1rem;
+}
+
+.button-mint {
+  background-color: #3574c1 !important;
+  color: white !important;
+  border-bottom: 1px solid rgba(0,0,0,.1) !important;
 }
