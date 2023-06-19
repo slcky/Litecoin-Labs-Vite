@@ -4,37 +4,89 @@ import Papa from 'papaparse';
 import './Calendar.css';
 
 function Calendar() {
-  const [events, setEvents] = useState([]);
+  const [upcomingEvents, setUpcomingEvents] = useState([]);
+  const [releasedEvents, setReleasedEvents] = useState([]);
+  const [featuredEvents, setFeaturedEvents] = useState([]);
 
   useEffect(() => {
-    Papa.parse('https://docs.google.com/spreadsheets/d/e/2PACX-1vR2ZxrRd2m4StGsM9UNvhPSfz8NknnzoOHfOlFEU8BsZHhZiZtvLR9dkvn6U5MhMd2Fg8K6-_-sRRqu/pub?gid=0&single=true&output=csv', {
-      download: true,
-      header: true,
-      complete: function(results) {
-        const sortedEvents = results.data.sort((a, b) => new Date(a.Date) - new Date(b.Date));
-        setEvents(sortedEvents);
-      },
-      error: function(err) {
-        console.error('Error reading CSV file:', err);
-      }
-    });
+    const fetchEvents = async () => {
+      const normalEventsPromise = fetchCSV('https://docs.google.com/spreadsheets/d/e/2PACX-1vR2ZxrRd2m4StGsM9UNvhPSfz8NknnzoOHfOlFEU8BsZHhZiZtvLR9dkvn6U5MhMd2Fg8K6-_-sRRqu/pub?gid=0&single=true&output=csv');
+      const featuredEventsPromise = fetchCSV('https://docs.google.com/spreadsheets/d/e/2PACX-1vR2ZxrRd2m4StGsM9UNvhPSfz8NknnzoOHfOlFEU8BsZHhZiZtvLR9dkvn6U5MhMd2Fg8K6-_-sRRqu/pub?gid=1102275214&single=true&output=csv');
+
+      const [normalEvents, featuredEvents] = await Promise.all([normalEventsPromise, featuredEventsPromise]);
+
+      const now = new Date();
+
+      // separate upcoming and released events
+      const upcoming = normalEvents.filter(event => new Date(event.Date) >= now);
+      const released = normalEvents.filter(event => new Date(event.Date) < now);
+
+      const sortedUpcomingEvents = upcoming.sort((a, b) => new Date(a.Date) - new Date(b.Date));
+      const sortedReleasedEvents = released.sort((a, b) => new Date(a.Date) - new Date(b.Date));
+      
+      setUpcomingEvents(sortedUpcomingEvents);
+      setReleasedEvents(sortedReleasedEvents);
+      setFeaturedEvents(featuredEvents);
+    };
+
+    const fetchCSV = (url) => {
+      return new Promise((resolve, reject) => {
+        Papa.parse(url, {
+          download: true,
+          header: true,
+          complete: function(results) {
+            resolve(results.data);
+          },
+          error: function(err) {
+            console.error('Error reading CSV file:', err);
+            reject(err);
+          }
+        });
+      });
+    };
+
+    fetchEvents();
   }, []);
+
+  const handleClick = (url) => {
+    window.open(url, '_blank');
+  }
+
+  const renderEvents = (events) => {
+    return events.map((event, index) => (
+      <div key={index} className="event">
+        <img src={event.Image} alt={event.Name} />
+        <div>
+          <h2>{event.Name}</h2>
+          <h3>{event.Date}</h3>
+          <h3>SIZE: {event.Amount}</h3>
+          <p>{event.Description}</p>
+          <div className="buttons">
+            {event.Website && <button onClick={() => handleClick(event.Website)}>Website</button>}
+            {event.Twitter && <button onClick={() => handleClick(event.Twitter)}>Twitter</button>}
+            {event.Discord && <button onClick={() => handleClick(event.Discord)}>Discord</button>}
+          </div>
+        </div>
+      </div>
+    ));
+  }
 
   return (
     <div className="calendar-container">
-      {events.map((event, index) => (
-        <div key={index} className="event">
-          <img src={event.Image} alt={event.Name} />
-          <div>
-            <h2>{event.Name}</h2>
-            <h3>Release date: {event.Date}</h3>
-            <p>{event.Description}</p>
-            <a href={event.Website}>Website</a>
-            <a href={event.Twitter}>Twitter</a>
-            <a href={event.Discord}>Discord</a>
-          </div>
-        </div>
-      ))}
+      <div className="featured-header">
+        <h2>FEATURED</h2>
+      </div>
+      {renderEvents(featuredEvents)}
+      
+      <div className="upcoming-header">
+        <h2>UPCOMING</h2>
+      </div>
+      {renderEvents(upcomingEvents)}
+
+      <div className="released-header">
+        <h2>RELEASED</h2>
+      </div>
+      {renderEvents(releasedEvents)}
     </div>
   );
 }
