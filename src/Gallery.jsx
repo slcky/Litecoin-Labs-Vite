@@ -30,6 +30,7 @@ function Gallery() {
   const [inscriptionFilter, setInscriptionFilter] = useState("");
   const [walletFilter, setWalletFilter] = useState("");
   const [walletInscriptions, setWalletInscriptions] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const data = isDataSetOne ? data1 : data2;
   const setData = isDataSetOne ? setData1 : setData2;
@@ -122,17 +123,21 @@ function Gallery() {
   }, [walletInscriptions, setOriginalData, originalData]);
 
   useEffect(() => {
-    if (!walletFilter) {
-      setWalletInscriptions([]);
-      return;
-    }
+      if (!walletFilter) {
+          setWalletInscriptions([]);
+          return;
+      }
 
-    fetch(`https://ordinalslite.com/address/${walletFilter}`)
-      .then(response => response.json())
-      .then(data => {
-        const inscriptions = data.inscriptions.map(inscription => inscription.href.split('/')[2]);
-        setWalletInscriptions(inscriptions);
-      });
+      setIsLoading(true);  // Set loading to true before fetching data
+      fetch(`https://ordinalslite.com/address/${walletFilter}`)
+          .then(response => response.json())
+          .then(data => {
+              const inscriptions = data._links.inscriptions.map(inscription => inscription.href.split('/')[2]);
+              setWalletInscriptions(inscriptions);
+          })
+          .finally(() => {
+              setIsLoading(false);  // Set loading to false after fetching data
+          });
   }, [walletFilter]);
 
   const options = {
@@ -151,7 +156,7 @@ function Gallery() {
         // Check if the last element is being observed and it's the second dataset
         if (!isDataSetOne && entry.target === lastElementRef.current && sliceEnd < data2.length) {
           // Load the next 2500 data points
-          setSliceEnd(prevEnd => Math.min(prevEnd + 2500, data2.length));
+          setSliceEnd(prevEnd => Math.min(prevEnd + 1000, data2.length));
         }
       } else {
         img.src = '';
@@ -336,24 +341,32 @@ function Gallery() {
           </div>
         </div>
         <div className="gallery-grid">
-          {filteredAndSortedData && filteredAndSortedData.map((item, index, arr) => (
-            <div 
-              key={item['Asset #']} 
-              className="gallery-item" 
-              ref={el => {
-                observerRefs.current[index] = el;
-                // If it's the last element, also assign the ref to `lastElementRef`
-                if (index === arr.length - 1) {
-                  lastElementRef.current = el;
-                }
-              }}
-            >
-              <img data-src={item['Image']} src="" alt={`Item ${item['Item #']}`} />
-              <p className="punk-number">{item['Item #']}</p>
-              <p className="inscription-number">INSC. {item['Inscription #']}</p>
-              <p className="punk-rarity">RANK {item['Rank Value']}</p>
-            </div>
-          ))}
+        {isLoading ? (
+          <p className="loading-text">Loading Inscriptions for {walletFilter}...</p>
+        ) : (
+          (walletInscriptions.length === 0 && walletFilter) ? (
+            <p className="loading-text">No inscriptions in {walletFilter}</p>
+          ) : (
+            filteredAndSortedData && filteredAndSortedData.map((item, index, arr) => (
+              <div 
+                key={item['Asset #']} 
+                className="gallery-item" 
+                ref={el => {
+                  observerRefs.current[index] = el;
+                  // If it's the last element, also assign the ref to `lastElementRef`
+                  if (index === arr.length - 1) {
+                    lastElementRef.current = el;
+                  }
+                }}
+              >
+                <img data-src={item['Image']} src="" alt={`Item ${item['Item #']}`} />
+                <p className="punk-number">{item['Item #']}</p>
+                <p className="inscription-number">INSC. {item['Inscription #']}</p>
+                <p className="punk-rarity">RANK {item['Rank Value']}</p>
+              </div>
+              ))
+            )
+          )}
         </div>
       </div>
     </div>

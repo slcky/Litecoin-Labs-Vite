@@ -136,6 +136,19 @@
     text-transform: uppercase;
 }
 
+.loading-text {
+  grid-column: 1 / -1;  /* Span all columns */
+  grid-row: 1 / -1;     /* Span all rows */
+  color: black;
+  font-family: dogicabold;
+  font-size: .65rem;
+  letter-spacing: .1em;
+  margin-top: 0.75rem;
+  padding-bottom: 0.25rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .inscription-number, .punk-rarity {
     color: black;
     font-family: dogica;
