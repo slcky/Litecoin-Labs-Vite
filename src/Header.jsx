@@ -71,7 +71,7 @@ const Header = () => {
       </button>
       <nav className="navigation-desktop">
         <Link to="/gallery"><button className="nav-button">GALLERY</button></Link>
-        <button className="nav-button" onClick={handleMarketClick}>MARKET</button>
+        {/* <button className="nav-button" onClick={handleMarketClick}>MARKET</button> */}
         <Link to="/calendar"><button className="nav-button">CALENDAR</button></Link>
         {/*<button className="nav-button">ARCADE</button>*/}
         <button className="icon-button" onClick={handleTwitterClick}><img className="twitter" src={TwitterSVG} alt="Twitter" /></button>
