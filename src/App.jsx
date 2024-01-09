@@ -4,7 +4,8 @@ import { HashRouter as Router, Route, Routes } from 'react-router-dom'; // Chang
 import './App.css';
 import Header from './Header';
 import Gallery from './Gallery'; // import the Gallery component
-import MomentumSlider from './MomentumSlider'; // import the MomentumSlider component
+import Calendar from './Calendar'; // import the Calendar component
+import logo from './assets/litecoinlabs.png';
 
 function App() {
   return (
@@ -13,9 +14,10 @@ function App() {
         <Header />
         <Routes>
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/calendar" element={<Calendar />} /> {/* Add this line */}
           <Route path="/" element={
             <div className="center-screen">
-              <MomentumSlider />
+              <img className="logo" src={logo} alt="Litecoin Labs" />
             </div>
           } />
         </Routes>

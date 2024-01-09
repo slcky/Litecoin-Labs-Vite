@@ -6,23 +6,23 @@ import './Header.css';
 // Import SVG files
 import TwitterSVG from './assets/twitter.svg';
 import DiscordSVG from './assets/discord.svg';
-import OMLogoSVG from './assets/ordinals-wallet.svg';
+import OMLogoSVG from './assets/OMLogo.png';
 import MenuSVG from './assets/menu.svg';
 
-const handleMintClick = () => {
-  window.open("LINKHERE", "_blank");
-};
-
 const handleTwitterClick = () => {
-    window.open("https://twitter.com/bels_bells", "_blank");
+    window.open("https://twitter.com/LitecoinPunks", "_blank");
 };
 
 const handleDiscordClick = () => {
-    window.open("https://discord.gg/bells", "_blank");
+    window.open("https://discord.gg/hpgZUZGkNt", "_blank");
 };
 
 const handleOMClick = () => {
-    window.open("https://bells.ordinalswallet.com", "_blank");
+    window.open("https://ordinals.market/collection/ordinals/litecoin-punks", "_blank");
+};
+
+const handleMarketClick = () => {
+  window.open("https://beta.ordinalslite.market/", "_blank");
 };
 
 const Header = () => {
@@ -43,11 +43,6 @@ const Header = () => {
     setIsOpen(false);
   }
 
-  const handleMintClickAndCloseMenu = () => {
-    handleMintClick();
-    closeMenu();
-  }
-
   const handleTwitterClickAndCloseMenu = () => {
     handleTwitterClick();
     closeMenu();
@@ -63,25 +58,34 @@ const Header = () => {
     closeMenu();
   }
 
+  const handleMarketClickAndCloseMenu = () => {
+    handleMarketClick();
+    closeMenu();
+  }
+
   return (
     <header className="header">
-      <Link to="/"><button className="logo-button" onClick={closeMenu}>BELLS</button></Link>
+      <Link to="/"><button className="logo-button" onClick={closeMenu}>LLABS</button></Link>
       <button className="menu-button" onClick={() => setIsOpen(!isOpen)}>
         <img src={MenuSVG} alt="Menu"/>
       </button>
       <nav className="navigation-desktop">
-      <Link to="https://twitter.com/bels_bells"><button className="nav-button">MINT AVATAR</button></Link>
         <Link to="/gallery"><button className="nav-button">GALLERY</button></Link>
+        {/* <button className="nav-button" onClick={handleMarketClick}>MARKET</button> */}
+        <Link to="/calendar"><button className="nav-button">CALENDAR</button></Link>
+        {/*<button className="nav-button">ARCADE</button>*/}
         <button className="icon-button" onClick={handleTwitterClick}><img className="twitter" src={TwitterSVG} alt="Twitter" /></button>
         <button className="icon-button" onClick={handleDiscordClick}><img className="discord" src={DiscordSVG} alt="Discord" /></button>
         <button className="om-button" onClick={handleOMClick}><img src={OMLogoSVG} alt="OMLogo" /></button>
       </nav>
       <nav className={`navigation-mobile ${isOpen ? 'open' : ''}`}>
-        <div className="nav-item" onClick={handleMintClickAndCloseMenu}>MINT AVATAR</div>
         <Link to="/gallery" className="nav-item" onClick={closeMenu}>GALLERY</Link>
+        <div className="nav-item" onClick={handleMarketClickAndCloseMenu}>MARKET</div>
+        <Link to="/calendar" className="nav-item" onClick={closeMenu}>CALENDAR</Link>
+        {/*<div className="nav-item" onClick={closeMenu}>ARCADE</div>*/}
         <div className="nav-item" onClick={handleTwitterClickAndCloseMenu}>TWITTER</div>
         <div className="nav-item" onClick={handleDiscordClickAndCloseMenu}>DISCORD</div>
-        <div className="nav-item" onClick={handleOMClickAndCloseMenu}>ORDINALS WALLET</div>
+        <div className="nav-item" onClick={handleOMClickAndCloseMenu}>OM</div>
       </nav>
     </header>
   );

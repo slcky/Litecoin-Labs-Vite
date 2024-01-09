@@ -5,8 +5,8 @@ import './Gallery.css';
 import close from './assets/close.svg';
 import filter from './assets/filter.svg';
 
-const filterColumnsData1 = [];
-const filterColumnsData2 = ["Background", "Bells", "Eyes", "Head",	"Mouth",	"Shirt"];
+const filterColumnsData1 = ["Background", "Body", "Eyes", "Eyewear", "Headwear", "Mouth", "Outerwear"];
+const filterColumnsData2 = ["Background", "Body", "Eyes", "Hats",	"Beak",	"Outerwear", "Feathers", "Glasses"];
 
 const uniqueValues = (data, key) => {
   if (!data) {
@@ -41,8 +41,8 @@ function Gallery() {
     filterColumns.reduce((acc, column) => ({ ...acc, [column]: false }), {})
   );
 
-  const csvUrl1 = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT4yP83GPtm_jWlfQOGQ7AnlNMKqkfi1VHDOfLNzDaBwqCB9uPK4GD8NZH6Y-sKtaokYYEgx3os07ib/pub?gid=158543575&single=true&output=csv';
-  const csvUrl2 = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT4yP83GPtm_jWlfQOGQ7AnlNMKqkfi1VHDOfLNzDaBwqCB9uPK4GD8NZH6Y-sKtaokYYEgx3os07ib/pub?gid=0&single=true&output=csv';
+  const csvUrl1 = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQN-Mm-iMvPFYIJRlD759AF0joa_WCRV6ZRnsRiAtMKY6WGTUj6OdnG4A9rclBmmUaPb7byJr5o-EMt/pub?gid=0&single=true&output=csv';
+  const csvUrl2 = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQN-Mm-iMvPFYIJRlD759AF0joa_WCRV6ZRnsRiAtMKY6WGTUj6OdnG4A9rclBmmUaPb7byJr5o-EMt/pub?gid=524936850&single=true&output=csv';
 
   useEffect(() => {
     const csvUrl = isDataSetOne ? csvUrl1 : csvUrl2;
@@ -129,7 +129,7 @@ function Gallery() {
       }
 
       setIsLoading(true);  // Set loading to true before fetching data
-      fetch(`https://bellinals.nintondo.io/address/${walletFilter}`)
+      fetch(`https://ordinalslite.com/address/${walletFilter}`)
           .then(response => response.json())
           .then(data => {
               const inscriptions = data._links.inscriptions.map(inscription => inscription.href.split('/')[2]);
@@ -271,13 +271,13 @@ function Gallery() {
           <img className="close-btn" src={close} alt="Close button"></img>
         </div>
       </div>
-        {/* <div className="rarity-mode-switch">
+        <div className="rarity-mode-switch">
           <span>RARITY MODE</span>
           <label className="switch">
             <input type="checkbox" checked={isRarityModeOn} onChange={handleToggleRarityMode} />
             <span className="slider round"></span>
           </label>
-        </div> */}
+        </div>
         <div className="inscription-filter">
           <input 
             id="inscription-filter" 
@@ -288,7 +288,7 @@ function Gallery() {
             placeholder="Sort by inscription..."
           />
         </div>
-        {/* <div className="inscription-filter">
+        <div className="inscription-filter">
           <input 
             id="address-filter" 
             type="text" 
@@ -297,7 +297,7 @@ function Gallery() {
             className="search-number-box"
             placeholder="Sort by wallet..."
           />
-        </div> */}
+        </div>
         {filterColumns.map((column) => {
             const unique = uniqueValues(data, column);
             return (
@@ -329,10 +329,10 @@ function Gallery() {
           <div className="switch-dataset">
             <button 
               className={isDataSetOne ? "dataset-button selected" : "dataset-button"} 
-              onClick={() => handleToggleDataSet('PUNKS')}>GENESIS</button>
+              onClick={() => handleToggleDataSet('PUNKS')}>PUNKS</button>
             <button 
               className={!isDataSetOne ? "dataset-button selected" : "dataset-button"} 
-              onClick={() => handleToggleDataSet('MOONBIRDS')}>AVATAR</button>
+              onClick={() => handleToggleDataSet('MOONBIRDS')}>MOONBIRDS</button>
           </div>
           <div className="filter-button-div">
             <button className="filter-button" onClick={toggleSortingSection}>
