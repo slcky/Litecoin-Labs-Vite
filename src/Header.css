@@ -25,30 +25,28 @@
 .logo-button {
   position: relative;
     font-family: "8 Bit Wonder";
-    font-size: 18px;
-    background-color: #3574c1;
+    background-color: #edc239;
     border: transparent;
     padding: 6px;
     padding-bottom: 8px;
     cursor: pointer;
     border-radius: 4px;
-    color: #ffffff;
+    color: black;
     margin-left: 50px;
     z-index: 1000;
-    border-bottom: 1px solid rgba(0,0,0,.1);
   }
 
   .logo-button:hover {
-    background-color: #1d78e1; /* change background color when hovered */
+    background-color: black;
+    color: #edc239;
 }
   
 .nav-button {
     font-family: "8 Bit Wonder";
-    background-color: #e6e2e0;
-    font-size: 18px;
+    background-color: black;
     border: none;
     border-radius: 4px;
-    color: #51504f;
+    color: #edc239;
     cursor: pointer;
     margin-left: 10px;
     padding: 6px 6px 8px;
@@ -57,7 +55,8 @@
   }
 
   .nav-button:hover, .icon-button:hover, .om-button:hover {
-    background-color: #d9d4d2;
+    background-color: #edc239;
+    color: black;
 }
 
 .navigation-desktop {
@@ -68,13 +67,13 @@
 
 .icon-button {
     font-family: "8 Bit Wonder";
-    background-color: #e6e2e0;
+    background-color: transparent;
     border: none;
     border-radius: 4px;
     color: #51504f;
     cursor: pointer;
     margin-left: 10px;
-    padding: 3px 15px;
+    padding: 3px 10px;
     transition: background-color 0.2s ease-in-out;
     border-bottom: 1px solid rgba(0,0,0,.1);
   }
@@ -86,7 +85,7 @@
 
 .om-button {
     font-family: "8 Bit Wonder";
-    background-color: #e6e2e0;
+    background-color: transparent;
     border: none;
     border-radius: 4px;
     color: #51504f;

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_46" data-name="Layer 46" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #4bc4e3;
+        opacity: .5;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        opacity: .54;
+      }
+
+      .cls-2, .cls-6, .cls-8 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        fill: #231f20;
+        opacity: .3;
+      }
+
+      .cls-5 {
+        fill: #ff9489;
+      }
+
+      .cls-7 {
+        opacity: .2;
+      }
+
+      .cls-8 {
+        opacity: .69;
+      }
+    </style>
+  </defs>
+  <polygon class="cls-6" points="44 85.6 44 92 53.6 92 53.6 88.8 50.4 88.8 50.4 85.6 44 85.6"/>
+  <polygon class="cls-6" points="76 85.6 76 92 66.4 92 66.4 88.8 69.6 88.8 69.6 85.6 76 85.6"/>
+  <rect class="cls-7" x="72.8" y="85.6" width="3.2" height="6.4"/>
+  <rect class="cls-7" x="44" y="85.6" width="3.2" height="6.4"/>
+  <polygon class="cls-5" points="56.8 40.8 63.2 40.8 63.2 44 66.4 44 66.4 47.2 69.6 47.2 69.6 50.4 72.8 50.4 72.8 60 76 60 76 69.6 79.2 69.6 79.2 72.8 82.4 72.8 82.4 79.2 76 79.2 76 82.4 69.6 82.4 69.6 85.6 50.4 85.6 50.4 82.4 44 82.4 44 79.2 37.6 79.2 37.6 72.8 40.8 72.8 40.8 69.6 44 69.6 44 60 47.2 60 47.2 50.4 50.4 50.4 50.4 47.2 53.6 47.2 53.6 44 56.8 44 56.8 40.8"/>
+  <rect class="cls-3" x="34.4" y="72.8" width="3.2" height="6.4"/>
+  <rect class="cls-3" x="40.8" y="60" width="3.2" height="9.6"/>
+  <rect class="cls-3" x="37.6" y="79.2" width="6.4" height="3.2"/>
+  <rect class="cls-3" x="44" y="82.4" width="6.4" height="3.2"/>
+  <rect class="cls-3" x="37.6" y="69.6" width="3.2" height="3.2"/>
+  <rect class="cls-3" x="47.2" y="47.2" width="3.2" height="3.2"/>
+  <rect class="cls-3" x="50.4" y="44" width="3.2" height="3.2"/>
+  <rect class="cls-3" x="53.6" y="40.8" width="3.2" height="3.2"/>
+  <rect class="cls-3" x="44" y="50.4" width="3.2" height="9.6"/>
+  <rect class="cls-3" x="82.4" y="72.8" width="3.2" height="6.4" transform="translate(168 152) rotate(-180)"/>
+  <rect class="cls-3" x="76" y="60" width="3.2" height="9.6" transform="translate(155.2 129.6) rotate(-180)"/>
+  <rect class="cls-3" x="76" y="79.2" width="6.4" height="3.2" transform="translate(158.4 161.6) rotate(-180)"/>
+  <rect class="cls-3" x="69.6" y="82.4" width="6.4" height="3.2" transform="translate(145.6 168) rotate(-180)"/>
+  <rect class="cls-4" x="69.6" y="79.2" width="6.4" height="3.2" transform="translate(145.6 161.6) rotate(-180)"/>
+  <rect class="cls-3" x="79.2" y="69.6" width="3.2" height="3.2" transform="translate(161.6 142.4) rotate(-180)"/>
+  <rect class="cls-3" x="69.6" y="47.2" width="3.2" height="3.2" transform="translate(142.4 97.6) rotate(-180)"/>
+  <rect class="cls-3" x="66.4" y="44" width="3.2" height="3.2" transform="translate(136 91.2) rotate(-180)"/>
+  <rect class="cls-3" x="63.2" y="40.8" width="3.2" height="3.2" transform="translate(129.6 84.8) rotate(-180)"/>
+  <rect class="cls-3" x="72.8" y="50.4" width="3.2" height="9.6" transform="translate(148.8 110.4) rotate(-180)"/>
+  <polygon class="cls-3" points="76 85.6 76 92 69.6 92 66.4 92 63.2 92 56.8 92 53.6 92 53.6 92 50.4 92 44 92 44 85.6 40.8 85.6 40.8 95.2 43.35 95.2 43.35 95.2 53.6 95.2 54.25 95.2 56.8 95.2 63.2 95.2 65.75 95.2 66.4 95.2 66.4 95.2 76.65 95.2 76.65 95.2 79.2 95.2 79.2 85.6 76 85.6"/>
+  <rect class="cls-3" x="56.8" y="37.6" width="6.4" height="3.2"/>
+  <rect class="cls-4" x="76" y="69.6" width="3.2" height="3.2" transform="translate(155.2 142.4) rotate(-180)"/>
+  <rect class="cls-4" x="79.2" y="72.8" width="3.2" height="6.4" transform="translate(161.6 152) rotate(-180)"/>
+  <rect class="cls-4" x="69.6" y="50.4" width="3.2" height="9.6" transform="translate(142.4 110.4) rotate(-180)"/>
+  <rect class="cls-4" x="66.4" y="47.2" width="3.2" height="3.2" transform="translate(136 97.6) rotate(-180)"/>
+  <rect class="cls-4" x="63.2" y="44" width="3.2" height="3.2" transform="translate(129.6 91.2) rotate(-180)"/>
+  <rect class="cls-4" x="72.8" y="60" width="3.2" height="9.6" transform="translate(148.8 129.6) rotate(-180)"/>
+  <rect class="cls-2" x="40.8" y="69.6" width="3.2" height="3.2"/>
+  <rect class="cls-2" x="44" y="79.2" width="6.4" height="3.2"/>
+  <rect class="cls-2" x="37.6" y="72.8" width="3.2" height="6.4"/>
+  <rect class="cls-2" x="47.2" y="50.4" width="3.2" height="9.6"/>
+  <rect class="cls-2" x="50.4" y="47.2" width="3.2" height="3.2"/>
+  <rect class="cls-2" x="53.6" y="44" width="3.2" height="3.2"/>
+  <rect class="cls-2" x="44" y="60" width="3.2" height="9.6"/>
+  <rect class="cls-4" x="56.8" y="40.8" width="6.4" height="3.2"/>
+  <rect class="cls-3" x="53.6" y="60" width="3.2" height="9.6"/>
+  <rect class="cls-3" x="63.2" y="60" width="3.2" height="9.6"/>
+  <rect class="cls-3" x="55.2" y="76" width="9.6" height="3.2"/>
+  <polygon class="cls-1" points="85.6 44 82.4 37.6 76 34.4 69.6 31.2 63.2 28 56.8 28 50.4 31.2 44 34.4 37.6 37.6 34.4 44 31.2 50.4 31.2 66.4 34.4 72.8 37.6 72.8 37.6 79.2 44 79.2 44 82.4 50.4 82.4 50.4 85.6 69.6 85.6 69.6 82.4 76 82.4 76 79.2 82.4 79.2 82.4 72.8 85.6 72.8 88.8 66.4 88.8 50.4 85.6 44"/>
+  <rect class="cls-8" x="44" y="34.4" width="6.4" height="3.2"/>
+  <rect class="cls-8" x="50.4" y="31.2" width="6.4" height="3.2"/>
+  <rect class="cls-8" x="56.8" y="28" width="6.4" height="3.2"/>
+  <rect class="cls-8" x="31.2" y="50.45" width="3.2" height="15.95"/>
+  <polygon class="cls-8" points="44 37.6 40.8 37.6 37.6 37.6 37.6 40.8 37.6 44 40.8 44 40.8 40.8 44 40.8 44 37.6"/>
+  <rect class="cls-8" x="34.34" y="66.4" width="3.2" height="6.4"/>
+  <rect class="cls-8" x="34.4" y="44" width="3.2" height="6.4"/>
+  <rect class="cls-7" x="69.6" y="34.4" width="6.4" height="3.2" transform="translate(145.6 72) rotate(-180)"/>
+  <rect class="cls-7" x="63.2" y="31.2" width="6.4" height="3.2" transform="translate(132.8 65.6) rotate(-180)"/>
+  <rect class="cls-7" x="85.6" y="50.45" width="3.2" height="15.95" transform="translate(174.4 116.85) rotate(-180)"/>
+  <polygon class="cls-7" points="76 37.6 79.2 37.6 82.4 37.6 82.4 40.8 82.4 44 79.2 44 79.2 40.8 76 40.8 76 37.6"/>
+  <rect class="cls-7" x="82.46" y="66.4" width="3.2" height="6.4" transform="translate(168.12 139.2) rotate(-180)"/>
+  <rect class="cls-7" x="82.4" y="44" width="3.2" height="6.4" transform="translate(168 94.4) rotate(-180)"/>
+  <rect class="cls-3" x="28" y="50.45" width="3.2" height="15.95"/>
+  <rect class="cls-3" x="34.4" y="37.6" width="3.2" height="6.4"/>
+  <rect class="cls-3" x="37.6" y="34.4" width="6.4" height="3.2"/>
+  <rect class="cls-3" x="44" y="31.2" width="6.4" height="3.2"/>
+  <rect class="cls-3" x="50.4" y="28" width="6.4" height="3.2"/>
+  <rect class="cls-3" x="56.8" y="24.8" width="6.4" height="3.2"/>
+  <rect class="cls-3" x="31.2" y="66.4" width="3.2" height="6.4"/>
+  <rect class="cls-3" x="31.2" y="44" width="3.2" height="6.4"/>
+  <rect class="cls-3" x="88.8" y="50.45" width="3.2" height="15.95" transform="translate(180.8 116.85) rotate(-180)"/>
+  <rect class="cls-3" x="82.4" y="37.6" width="3.2" height="6.4" transform="translate(168 81.6) rotate(-180)"/>
+  <rect class="cls-3" x="76" y="34.4" width="6.4" height="3.2" transform="translate(158.4 72) rotate(-180)"/>
+  <rect class="cls-3" x="69.6" y="31.2" width="6.4" height="3.2" transform="translate(145.6 65.6) rotate(-180)"/>
+  <rect class="cls-3" x="63.2" y="28" width="6.4" height="3.2" transform="translate(132.8 59.2) rotate(-180)"/>
+  <rect class="cls-3" x="85.6" y="66.4" width="3.2" height="6.4" transform="translate(174.4 139.2) rotate(-180)"/>
+  <rect class="cls-3" x="85.6" y="44" width="3.2" height="6.4" transform="translate(174.4 94.4) rotate(-180)"/>
+  <rect class="cls-6" x="53.6" y="88.8" width="12.8" height="3.2"/>
+  <rect class="cls-7" x="63.2" y="88.8" width="3.2" height="3.2"/>
+  <rect class="cls-7" x="53.6" y="88.8" width="3.2" height="3.2"/>
+  <polygon class="cls-3" points="69.6 88.8 69.6 85.6 50.4 85.6 50.4 88.8 53.6 88.8 56.8 88.8 56.8 88.8 63.2 88.8 63.2 88.8 66.4 88.8 69.6 88.8"/>
+</svg>
