@@ -8,6 +8,7 @@ import TwitterSVG from './assets/twitter.svg';
 import DiscordSVG from './assets/discord.svg';
 import OMLogoSVG from './assets/OMLogo.png';
 import MenuSVG from './assets/menu.svg';
+import ChikunSVG from './assets/ChikunSVG.png';
 
 const handleTwitterClick = () => {
     window.open("https://twitter.com/LitecoinPunks", "_blank");
@@ -19,6 +20,10 @@ const handleDiscordClick = () => {
 
 const handleOMClick = () => {
     window.open("https://ordinals.market/collection/ordinals/litecoin-punks", "_blank");
+};
+
+const handleChikunClick = () => {
+  window.open("https://chikun.market/", "_blank");
 };
 
 const handleMarketClick = () => {
@@ -58,6 +63,11 @@ const Header = () => {
     closeMenu();
   }
 
+  const handleChikunClickAndCloseMenu = () => {
+    handleChikunClick();
+    closeMenu();
+  }
+
   const handleMarketClickAndCloseMenu = () => {
     handleMarketClick();
     closeMenu();
@@ -77,15 +87,17 @@ const Header = () => {
         <button className="icon-button" onClick={handleTwitterClick}><img className="twitter" src={TwitterSVG} alt="Twitter" /></button>
         <button className="icon-button" onClick={handleDiscordClick}><img className="discord" src={DiscordSVG} alt="Discord" /></button>
         <button className="om-button" onClick={handleOMClick}><img src={OMLogoSVG} alt="OMLogo" /></button>
+        <button className="om-button" onClick={handleChikunClick}><img src={ChikunSVG} alt="ChikunSVG" /></button>
       </nav>
       <nav className={`navigation-mobile ${isOpen ? 'open' : ''}`}>
         <Link to="/gallery" className="nav-item" onClick={closeMenu}>GALLERY</Link>
-        <div className="nav-item" onClick={handleMarketClickAndCloseMenu}>MARKET</div>
+        {/*<div className="nav-item" onClick={handleMarketClickAndCloseMenu}>MARKET</div>*/}
         {/*<Link to="/calendar" className="nav-item" onClick={closeMenu}>CALENDAR</Link>*/}
         {/*<div className="nav-item" onClick={closeMenu}>ARCADE</div>*/}
         <div className="nav-item" onClick={handleTwitterClickAndCloseMenu}>TWITTER</div>
         <div className="nav-item" onClick={handleDiscordClickAndCloseMenu}>DISCORD</div>
         <div className="nav-item" onClick={handleOMClickAndCloseMenu}>OM</div>
+        <div className="nav-item" onClick={handleChikunClickAndCloseMenu}>CHIKUN MARKET</div>
       </nav>
     </header>
   );
