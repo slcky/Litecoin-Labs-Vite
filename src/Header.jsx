@@ -72,7 +72,7 @@ const Header = () => {
       <nav className="navigation-desktop">
         <Link to="/gallery"><button className="nav-button">GALLERY</button></Link>
         {/* <button className="nav-button" onClick={handleMarketClick}>MARKET</button> */}
-        <Link to="/calendar"><button className="nav-button">CALENDAR</button></Link>
+        {/*<Link to="/calendar"><button className="nav-button">CALENDAR</button></Link>*/}
         {/*<button className="nav-button">ARCADE</button>*/}
         <button className="icon-button" onClick={handleTwitterClick}><img className="twitter" src={TwitterSVG} alt="Twitter" /></button>
         <button className="icon-button" onClick={handleDiscordClick}><img className="discord" src={DiscordSVG} alt="Discord" /></button>
@@ -81,7 +81,7 @@ const Header = () => {
       <nav className={`navigation-mobile ${isOpen ? 'open' : ''}`}>
         <Link to="/gallery" className="nav-item" onClick={closeMenu}>GALLERY</Link>
         <div className="nav-item" onClick={handleMarketClickAndCloseMenu}>MARKET</div>
-        <Link to="/calendar" className="nav-item" onClick={closeMenu}>CALENDAR</Link>
+        {/*<Link to="/calendar" className="nav-item" onClick={closeMenu}>CALENDAR</Link>*/}
         {/*<div className="nav-item" onClick={closeMenu}>ARCADE</div>*/}
         <div className="nav-item" onClick={handleTwitterClickAndCloseMenu}>TWITTER</div>
         <div className="nav-item" onClick={handleDiscordClickAndCloseMenu}>DISCORD</div>
